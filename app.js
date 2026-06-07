@@ -80,8 +80,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/listings", (req, res) => {
-    res.send("listings");
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 });
 
 // app.get("/demouser", async (req, res) => {
