@@ -80,9 +80,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/", (req, res) => {
-    res.send("Hi I am root");
-});
+// app.get("listings", (req, res) => {
+//     res.send("Hi I am root");
+// });
 
 // app.get("/demouser", async (req, res) => {
 //     try {

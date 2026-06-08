@@ -2,21 +2,51 @@
 <%=success%>
 <body>
     <style>
- #filters{
-   display: flex;
-   flex-wrap:wrap ;
- }
- .filter{
-  text-align: center;
-  margin-right: 8rem;
-  margin-top: 2rem;
-  opacity: 0.7;
- }
- .filter:hover{
-        opacity: 1;
-        cursor: pointer;
- }
-    </style>
+#filters{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1rem;
+    margin-top:1rem;
+}
+
+.filter{
+    text-align:center;
+    opacity:0.7;
+    min-width:70px;
+}
+
+.filter:hover{
+    opacity:1;
+    cursor:pointer;
+}
+
+.card-img-top{
+    height:20rem;
+    object-fit:cover;
+}
+
+.listing-link{
+    text-decoration:none;
+    color:inherit;
+}
+
+@media (max-width:768px){
+
+    #filters{
+        gap:0.7rem;
+    }
+
+    .filter{
+        min-width:60px;
+        font-size:0.85rem;
+    }
+
+    .card-img-top{
+        height:15rem;
+    }
+}
+</style>
 
      <div id="filters">
       <div class="filter">
@@ -49,7 +79,7 @@
       </div>
      </div>
 
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
     <% for(let listing of allListings){%>
       <a href="/listings/<%= listing._id%>" class="listing-link">
 <div class="card col">
@@ -63,7 +93,8 @@
 
   </div>
 </div>
-<%}%>
 </a>
 </div>
+<%}%>
+
 
