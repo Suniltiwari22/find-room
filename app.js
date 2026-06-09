@@ -80,9 +80,9 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.get("listings", (req, res) => {
-//     res.send("Hi I am root");
-// });
+app.get("/", (req, res) => {
+    res.render("listings/index"); // or your home page ejs file
+});
 
 
 // app.get("/demouser", async (req, res) => {
