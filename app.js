@@ -86,21 +86,6 @@ app.get("/", async (req, res) => {
     res.render("listings/index", { allListings });
 });
 
-// app.get("/demouser", async (req, res) => {
-//     try {
-//         let fakeUser = new User({
-//             email: "sunil8292tiwari@gmail.com",
-//             username: "datascience",
-//         });
-
-//         let registeredUser = await User.register(fakeUser, "helloworld");
-
-//         res.send(registeredUser);
-//     } catch (err) {
-//         console.log(err);
-//         res.send(err.message);
-//     }
-// });
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);

@@ -1,59 +1,36 @@
-<nav class="navbar navbar-expand-md border-bottom sticky-top bg-white">
-    <div class="container-fluid">
-
-        <a class="navbar-brand" href="/listings">
+<nav class="navbar">
+    <div class="logo">
+        <a href="/listings">
             <i class="fa-solid fa-compass"></i>
+            ExploreStay
         </a>
+    </div>
 
-        <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="search-container">
+        <form action="/listings" method="GET">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-            <!-- Left Side -->
-            <div class="navbar-nav">
-                <a class="nav-link" href="/listings">Explore</a>
-            </div>
-
-            <!-- Search Bar -->
-            <form class="d-flex mx-auto my-3 my-md-0 search-form" role="search">
                 <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search rooms..."
-                    aria-label="Search"
+                    type="text"
+                    name="search"
+                    placeholder="Search rooms, hotels, apartments..."
                 >
-                <button class="btn btn-danger" type="submit">
+
+                <button class="search-btn">
                     Search
                 </button>
-            </form>
-
-            <!-- Right Side -->
-            <div class="navbar-nav ms-md-auto text-center">
-
-                <a class="nav-link" href="/listings/new">
-                    Add Listing
-                </a>
-
-                <% if(!currentUser){ %>
-                    <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-                    <a class="nav-link" href="/login"><b>Log In</b></a>
-                <% } %>
-
-                <% if(currentUser){ %>
-                    <a class="nav-link" href="/logout"><b>Log Out</b></a>
-                <% } %>
-
             </div>
+        </form>
+    </div>
 
-        </div>
+    <div class="nav-links">
+        <a href="/listings/new">Add Listing</a>
 
+        <a href="/login">Log In</a>
+
+        <a href="/signup" class="signup-btn">
+            Sign Up
+        </a>
     </div>
 </nav>
-
-
-
-
