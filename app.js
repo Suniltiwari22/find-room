@@ -80,9 +80,10 @@ app.use((req, res, next) => {
     next();
 });
 
-// app.get("listings", (req, res) => {
-//     res.send("Hi I am root");
-// });
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 
 // app.get("/demouser", async (req, res) => {
 //     try {
