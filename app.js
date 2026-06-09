@@ -80,11 +80,9 @@ app.use((req, res, next) => {
     next();
 });
 
-router.get("/", async (req, res) => {
-    const allListings = await Listing.find({});
-    res.render("listings/index", { allListings });
+app.get("/", (req, res) => {
+    res.send("Find Room App is running 🚀");
 });
-
 
 // app.get("/demouser", async (req, res) => {
 //     try {
