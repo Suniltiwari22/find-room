@@ -80,9 +80,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/", (req, res) => {
-    res.redirect("/listings");
-});
+// app.get("listings", (req, res) => {
+//     res.send("Hi I am root");
+// });
 
 
 // app.get("/demouser", async (req, res) => {
@@ -116,3 +116,4 @@ app.use((err, req, res, next) => {
 app.listen(5000, () => {
     console.log("Server is listening on port 5000");
 });
+// force redeploy
