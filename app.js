@@ -1,6 +1,7 @@
 if(process.env.NODE_ENV != "production"){
     require("dotenv").config();
 }
+const Listing = require("./models/listing.js");
 const express = require("express");
 const app = express();
 
@@ -80,8 +81,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/", (req, res) => {
-    res.send("Find Room App is running 🚀");
+app.get("/", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("listings/index", { allListings });
 });
 
 // app.get("/demouser", async (req, res) => {
