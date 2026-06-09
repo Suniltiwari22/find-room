@@ -80,8 +80,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/", (req, res) => {
-    res.render("listings/index"); // or your home page ejs file
+router.get("/", async (req, res) => {
+    const allListings = await Listing.find({});
+    res.render("listings/index", { allListings });
 });
 
 
